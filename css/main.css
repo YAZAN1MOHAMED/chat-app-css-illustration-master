@@ -19,11 +19,7 @@ body {
   padding: 0 15px;
   display: flex;
   margin: 0 auto;
-  /* gap: 40px;
-    padding: 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; */
+  min-height: 94vh;
   padding-top: 20px;
   flex-direction: column;
   align-items: center;
@@ -34,18 +30,37 @@ body {
   position: absolute;
   width: 110%;
   z-index: -1;
-  height: 130%;
-  border-radius: 300px;
-  background-color: hsl(293, 100%, 63%);
+  height: 115%;
+  border-radius: 100vw;
+  background-color: hsl(278.01deg 98.96% 62.16%);
   top: -50%;
   left: -60%;
 }
 
 @media (min-width:768px) {
   .container::before {
-    /* width: 35%; */
-    left: 0;
-    width: min(35%,400px);
+    left: -5%;
+    width: min(35%, 400px);
+  }
+
+  @media (min-width:991px) {
+    .container::before {
+      height: 135%;
+    }
+
+    .container::after {
+      content: "";
+      position: absolute;
+      width: min(35%, 400px);
+      z-index: -1;
+      height: 85%;
+      border-radius: 100vw 100vw 0 0;
+      background-color: hsl(266deg 40% 93%);
+      bottom: 0%;
+      right: 0%;
+      opacity: 0.5;
+    }
+
   }
 
 }
@@ -55,8 +70,7 @@ body {
   .container {
     width: 750px;
     flex-direction: row;
-    justify-content: flex-end;
-    gap: 5%;
+    justify-content: space-evenly;
   }
 }
 
@@ -107,7 +121,6 @@ body {
   background-color: white;
   border-radius: 2.5em;
   position: relative;
-  /* margin: 50px auto; */
   min-width: 250px;
   max-width: 250px;
   padding: 0.8em;
@@ -306,47 +319,57 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%; 
+  border-radius: 50%;
   transform: rotate(-135deg);
   background-color: hsl(271, 36%, 24%);
 }
 
 .chat-interface .sumbit-button .arrow {
-  border-left-width: 3px;
-  border-bottom-width: 3px;
+  border-width:0px 0px 3px 3px;
   border-radius: 3px;
 
 }
-.heading{
+
+.heading {
   padding: 5%;
 }
+
 @media (min-width:768px) {
-  .heading{
+  .heading {
     display: flex;
-    width: 50%;
+    padding: 0;
+    width: 40%;
     flex-direction: column;
     align-items: flex-start;
-  }}
+  }
+}
+
 .heading h1 {
   text-align: center;
   font-size: 2.5em;
   color: hsl(271, 36%, 24%);
 }
-/* h1{
-  text-align: start;
-  font-size: 2em;
+
+@media (min-width:768px) {
+  .heading h1 {
+    text-align: start;
+    font-size: 2em;
     letter-spacing: 1.2px;
-} */
+  }
+}
 
 .heading p {
   color: hsl(270, 7%, 64%);
+  padding: 0 3%;
   line-height: 1.6;
   text-align: center;
 }
-@media (min-width:768px)
-{.heading p {
-  text-align: start;
-}}
+
+@media (min-width:768px) {
+  .heading p {
+    text-align: start;
+  }
+}
 
 /* End chat */
 /* End Phone Screen  */
